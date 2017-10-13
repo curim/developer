@@ -13,12 +13,25 @@
 参考：[ Markdownlint ](https://github.com/mivok/markdownlint)<br/>
 Markdownlint は ruby 形式のため ruby の導入が必要です。<br/>
 
-rubyの導入手順
-
+rubyの導入手順  
+参考サイト
+  - [ruby公式サイト](https://www.ruby-lang.org) 
+  - [rbenv公式リポジトリ](https://github.com/rbenv/rbenv)<br/>
+  
 ```
 #rubyのバージョン管理ツールrbenvをgitより入手
 $ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+#ruby-buildプラグインを追加
 $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+#.bash_profileにrbenvのパスを追加
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+$ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+$ source ~/.bash_profile
+
+#rubyのインストールに必要なパッケージをインストール
+$ yum -y install bzip2 gcc openssl-devel readline-devel zlib-devel
 
 #バージョン確認
 $ rbenv --version
@@ -54,12 +67,10 @@ $ mdl < Markdown ファイル>
 参考：[ HTMLHint ](http://htmlhint.com/)
 導入の前提としてnodeのバージョンがv0.11.15以上必要です。
 
-node.js のバージョン確認<br>
-
+node.js のバージョン確認 
 `node -v` または `nvm ls`
 
 node.jsのバージョン変更
-
 `nvm use {バージョン名}`
 
 ※node.jsのインストールは[「2-3. Hexo導入手順」](ci-server.md)で実施しています。
@@ -69,7 +80,7 @@ $ npm install htmlhint -g
 
 # テスト実施コマンド
 $ cat <チェックするファイル.html> | htmlhint stdin
-# またはチェックしたいファイルがあるディレクトリへ入って
+# またはチェックしたいファイルがあるディレクトリへ移動し、以下コマンドを実行
 $ htmlhint
 ```
 
