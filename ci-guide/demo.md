@@ -8,13 +8,13 @@
 
 ------------------------------------------------------------------------------------
 
-## 「想定利用シナリオ」の実行と運用
+## 8-1. 「想定利用シナリオ」の実行と運用
 
 概要の[シナリオ運用概要図](#ci_02)どおりに作業を進めます。
 
 ### 開発資産取得
 
-![scenario01](./image/scenario01.jpg)
+> ![scenario01](./image/scenario01.jpg)
 
 各開発チームが作業を行う前にGitHub Enterpriseのリポジトリのmasterブランチから資産を取得します。
 
@@ -46,7 +46,7 @@
 
 ### ブランチをPush
 
-![scenario02](./image/scenario02.jpg)
+> ![scenario02](./image/scenario02.jpg)
 
 開発チームでの作業が完了したら、リモートリポジトリ「CI_Guide」へPushします。
 
@@ -74,7 +74,7 @@
   正しくPushできたかGitHub Enterpriseの画面で確認します。
 
   【リモートリポジトリ「CI_Guide」画面その１】
-  ![scenario_push](./image/scenario_push.jpg)
+  > ![scenario_push](./image/scenario_push.jpg)
 
   赤枠①「Your recently pushed branches」に最近pushしたブランチが表示されます。
 
@@ -85,7 +85,7 @@
   赤枠③の「team_A」ブランチを選択して画面を遷移させます。
 
   【リモートリポジトリ「CI_Guide」画面その２】
-  ![scenario_branch](./image/scenario_branch.jpg)
+  > ![scenario_branch](./image/scenario_branch.jpg)
 
   赤枠④にコミットする際につけたメッセージ「開発チームＡ」が正しく表示されています。
 
@@ -98,7 +98,7 @@
 
 想定利用シナリオではこのPull Requestを契機にJenkinsが実行されます。
 
-![scenario03](./image/scenario03.jpg)
+> ![scenario03](./image/scenario03.jpg)
 
 想定利用シナリオでは以下を実行します。
 
@@ -108,7 +108,7 @@
 
   手順は第3章の[「PullRequest 手順」](#pullreq)の通りです。
 
-  ![scenario_pullreq](./image/scenario_pullreq.jpg)
+  > ![scenario_pullreq](./image/scenario_pullreq.jpg)
 
 - シナリオ②「PullRequestを契機にwebhook」
 
@@ -118,7 +118,7 @@
 
   Jenkins画面で確認します。
 
-  ![scenario_input](./image/scenario_input.jpg)
+  > ![scenario_input](./image/scenario_input.jpg)
 
   「管理者認証」のステージで一時停止していることが確認できます。
 
@@ -126,7 +126,7 @@
 
   全てのステージが完了すれば以下のような画面になります。
 
-  ![scenario_result](./image/scenario_result.jpg)
+  > ![scenario_result](./image/scenario_result.jpg)
 
 
 - シナリオ③ CIの結果を通知
@@ -140,7 +140,7 @@
 
   デプロイの確認は、ジョブの [ コンソール出力 ]に表示されたCFアップロード結果のURLで確認できます。
 
-  ![scenario_hexo](./image/scenario_hexo.jpg)
+  > ![scenario_hexo](./image/scenario_hexo.jpg)
 
   上記画像では開発チームＡが作成した「ci_test.md」ファイルからhtmlファイルが生成され、正しく表示されていることが分かります。
 
@@ -148,7 +148,7 @@
 
 管理者はソースのレビュー結果とPipelineで実施された各種テストの結果を検討し、さらにデプロイされた資産の確認を行い、全て問題なければ開発資産の統合を行います。
 
-![scenario04](./image/scenario04.jpg)
+> ![scenario04](./image/scenario04.jpg)
 
 - シナリオ⑥ masterブランチへMerge
 
@@ -156,19 +156,19 @@
 
   手順は第3章の[「Merge 手順」](#merge)の通りです。
 
-  ![scenario_merge](./image/scenario_merge.jpg)
+  > ![scenario_merge](./image/scenario_merge.jpg)
 
   画面の[Merge Pull Request]を押下すると資産が統合され、以下のように結果が表示されます。
 
-  ![scenario_merge_success](./image/scenario_merge_success.jpg)
+  > ![scenario_merge_success](./image/scenario_merge_success.jpg)
 
 - シナリオ⑦ 「Merge を契機にwebhook
 
   MergeされるとJenkinsの[『「Merge用 Pipeline」のScript 記述例』](#script_merge)で作成したPipelineが作動します。
 
-  本ガイドでは「guide_merge」という名で作成し実行しました。
+  本ガイドでは「guide_merge」という名で作成し実行しました。  
 
-  ![scenario_pipeline_merge](./image/scenario_pipeline_merge.jpg)
+  > ![scenario_pipeline_merge](./image/scenario_pipeline_merge.jpg)
 
 - シナリオ⑧～⑩
 
