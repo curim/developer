@@ -16,7 +16,7 @@
 
 ## 5-2. CFコマンドインストール
 
-仮想マシン CentOS 7 にCFコマンドをインストールします。
+仮想サーバ CentOS 7 にCFコマンドをインストールします。
 
 [「CF 使用手順チュートリアル」](https://cf-docs.jp-east-1.paas.cloud.global.fujitsu.com/ja/manual/tut/tut/topics/preface.html)の「開発者のアプリケーション開発の流れ＞事前設定＞CFコマンドの事前設定」を参照し、インストールして下さい。
 
@@ -28,7 +28,7 @@ CFへ資産をアップロードする手順を説明します。
 
 CFコマンドに関しては[「リファレンス CF コマンド」](https://cf-docs.jp-east-1.paas.cloud.global.fujitsu.com/ja/manual/ref/ref/topics/c-cf-cli.html)をご参考下さい。
 
-仮想マシンCentOS7での作業です。
+仮想サーバ CentOS 7 での作業です。
 
 ```bash
 #アップロードするファイルがあるディレクトリへ移動
