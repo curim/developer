@@ -4,7 +4,7 @@
 
 大筋では『想定利用シナリオ』の各作業をJenkinsのジョブとして作成し、次にそれらをPipelineでまとめ、最終的には資産格納を契機に自動的にCIを実行できるような設定にします。
 
-## Jenkinsのジョブの作成
+## 7-1. Jenkinsのジョブの作成
 
 第2章で紹介した[ジョブ作成手順](#job)を参考に『想定利用シナリオ』で必要なジョブを作成します。
 
@@ -135,13 +135,13 @@ Hexo資産の作成は[「第2章 2-3\. Hexo導入手順」](#hexo)で紹介し�
 
       を設定します。
 
-      ![Jenkins 資産取得](./image/asset_01.jpg)
+      > ![Jenkins 資産取得](./image/asset_01.jpg)
 
 - [ 設定 ] → [ ビルド環境 ] → [ ビルド開始前にワークスペースを削除する ]にチェックします。
 
   これはWorkSpace内に以前に取得した資産を残さず、常に最新の資産のみ保持するための措置です。
 
-  ![Jenkins 資産取得](./image/asset_02.jpg)
+  > ![Jenkins 資産取得](./image/asset_02.jpg)
 
   設定が完了したら、左下の保存を押下し、完了です。
 
@@ -172,7 +172,7 @@ hexoで生成したMDファイルは、
 
   【参考画像】※参考画像では、<資産取得のジョブ名>＝guide_source 実行コマンド「mdl」＝/usr/local/bin/mdl
 
-  ![job_mdl](./image/job_mdl.jpg)
+  > ![job_mdl](./image/job_mdl.jpg)
 
 ##### ジョブ3. htmlファイル生成（ブログ資産生成)
 
@@ -255,13 +255,14 @@ htmlファイル生成には `hexo generate` コマンドを実施します。
 手順
 - [ 設定 ] → [ ビルド後の処理 ] → [ ビルド後の処理の追加 ]を押下し、プルダウンメニューから [ 拡張E-mail通知 ]を選択します。
 
-  ![job_mail01](./image/jobmail01.jpg) ![job_mail02](./image/jobmail02.jpg)
+  > ![job_mail01](./image/jobmail01.jpg)
+  > ![job_mail02](./image/jobmail02.jpg)
 
   適宜設定項目を記述すれば完了です。
 
 以上で各ジョブが準備できました。
 
-## Jenkins Pipeline の作成
+## 7-2. Jenkins Pipeline の作成
 
 作成したジョブをPipelineでまとめ、資産格納を契機に自動的にCIを実行できるように設定します。
 
